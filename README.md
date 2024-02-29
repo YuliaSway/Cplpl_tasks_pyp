@@ -1,3 +1,3 @@
 # Cplpl_tasks_pyp
 
-Изменение файла readme, создание новой ветки test2
+Второе задание, 02_homework
