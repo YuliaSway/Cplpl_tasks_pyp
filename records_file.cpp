@@ -4,7 +4,7 @@
 
 std::string file_name = "logs.txt";
 
-void file_write(std::string str){
+void file_write(const std::string &str){
     std::ofstream file(file_name, std::ios::app);
     if(file.is_open()){
         file << str << std::endl;    

@@ -14,7 +14,7 @@ namespace ns{
 // воод пользовательских данных и проверка корректности ввода числа (?)
 int input_value(){
     std::string x;
-    std::cout << "Please, input value (range 0 - " << ns::max_range << ") :";
+    std::cout << "Enter your guess :";
     std::cin >> x;
 
     // проверяем пустая ли строка
@@ -47,13 +47,13 @@ bool choose_value(int &count_input){
 
         if(inp_value >= 0 && inp_value <= ns::max_range){
             if(inp_value == ns::random_value){
-                std::cout << "You win ! \n\n";
+                std::cout << "You win ! attempts = " << count_input << "\n";
                 condition_value = true;
                 break;
             } else if(inp_value < ns::random_value){
-                std::cout << "Less than ... \n";
+                std::cout << "Greater than " << inp_value << "\n";
             } else if(inp_value > ns::random_value){
-                std::cout << "Greater than ... \n";
+                std::cout << "Less than " << inp_value << "\n";
             }
         } else{
             std::cout << "Your input value is out of range, need enter new value \n";
@@ -70,7 +70,7 @@ bool choose_value(int &count_input){
 }
 
 // начало игры пользователя
-void user_start_game(const int& random_value, const int& max_range){
+void user_game(const int& random_value, const int& max_range){
     ns::random_value = random_value;
     ns::max_range = max_range;
     std::string user_name;
@@ -86,6 +86,6 @@ void user_start_game(const int& random_value, const int& max_range){
 
     file_write(result);
 
-    std::cout << "User name - " << user_name << ", input count - " << count_input << " " << (state ? "(win)" : "(lose)") << std::endl;
+    //std::cout << "User name - " << user_name << ", input count - " << count_input << " " << (state ? "(win)" : "(lose)") << std::endl;
 
 }
